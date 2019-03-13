@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import './App.css';
-import BaseLayout from './components/BaseLayout'
-import AuthorizedRoute from './components/AuthorizedRoute'
+import AuthorizedRoute from '@/authority/AuthorizedRoute';
 
 class App extends Component {
   render() {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import routeConfig from '../config/router.config';
-import BaseLayout from './BaseLayout';
-import LoginLayout from './LoginLayout'
-import LoadingTemp from './Loading';
-import NoFind from './NoFind';
+import routeConfig from '../../config/router.config';
+import BaseLayout from '@/layout/BaseLayout';
+import LoginLayout from '@/layout/LoginLayout'
+import LoadingTemp from '@/components/Loading';
+import NoFind from '@/components/NoFind';
 
 class AuthorizedRoute extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class AuthorizedRoute extends Component {
         return (<Route path={path} component={Component} {...rest} />)
       }
       routeConfig.forEach((item, index) => {
-        const ts = require(`./${item.component}`);
+        const ts = require(`../page/${item.component}/index`);
         linkArr.push(createRoute({
           ...item,
           key: index,
@@ -40,8 +40,7 @@ class AuthorizedRoute extends Component {
   render() {
     const { linkArr } = this.state;
     let Layout = '';
-    // 待续。。。
-    if(window.location.pathname === '/login') {
+    if(window.location.pathname.indexOf('login')) {
       Layout = LoginLayout;
     } else {
       Layout = BaseLayout;
