@@ -6,7 +6,7 @@ export default [
     component: 'Home',
     Layout: 'BaseLayout'
   },{
-    path: '/about',
+    path: '/about/one',
     name: 'about',
     component: 'About',
     Layout: 'BaseLayout'
